@@ -12,6 +12,7 @@ services:
       - $MARIA_LOCAL_PORT:$MARIADB_DOCKER_PORT
     volumes:
       - db:/var/lib/mysql
+      - ./schema.sql:/docker-entrypoint-initdb.d/schema.sql
   app:
     depends_on:
       - mariadb_rfid
