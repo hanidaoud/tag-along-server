@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  mariadb_rfid:
+    image: mariadb:10.6
+    restart: unless-stopped
+    env_file: ./.env
+    environment:
+      - MARIADB_ROOT_PASSWORD=$MARIADB_ROOT_PASSWORD
+      - MARIADB_DATABASE=$MARIADB_DATABASE
+    ports:
+      - $MARIA_LOCAL_PORT:$MARIADB_DOCKER_PORT
+    volumes:
+      - db:/var/lib/mysql
+  app:
+    depends_on:
+      - mariadb_rfid
+    build: ./
+    restart: unless-stopped
+    env_file: ./.env
+    ports:
+      - $NODE_LOCAL_PORT:$NODE_DOCKER_PORT
+    environment:
+      - DB_HOST=mariadb_rfid
+      - DB_USER=$MARIADB_USER
+      - DB_PASSWORD=$MARIADB_ROOT_PASSWORD
+      - DB_NAME=$MARIADB_DATABASE
+      - DB_PORT=$MARIADB_DOCKER_PORT
+    stdin_open: true
+    tty: true
+
+volumes: 
+  db:
