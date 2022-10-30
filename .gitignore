@@ -129,3 +129,4 @@ dist
 # Backup files
 src/_backup
 .vscode
+database
