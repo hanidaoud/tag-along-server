@@ -18,9 +18,9 @@ $ cd tag-along-server
 $ cp .env.sample .env   # change it as you see fit
 $ docker-compose up --build
 ```
-&emsp;Make sure it builds correctly then exit `ctrl + c`. <br>
+&emsp;&emsp;Make sure it builds correctly then exit `ctrl + c`. <br>
 + Now run it as a daemon: 
 ```
 $ docker-compose up -d
 ```
-&emsp;You're all set.
+&emsp;&emsp;You're all set.
