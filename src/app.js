@@ -38,7 +38,7 @@ app.use((req, res, next) => {
 
 app.use('', require('./routes/get'));
 
-app.use('/log', require("./routes/post"));
+app.use('', require("./routes/post"));
 
 const PORT = config.port; 
 

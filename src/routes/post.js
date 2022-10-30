@@ -4,7 +4,7 @@ const rfid 	  = require("../modules/rfid");
 const config = require("../config");
 const app = require("../app");
 
-router.post('/', (req, res) => {
+router.post('/log', (req, res) => {
 	res.statusCode = 400;
 	
 	if (req.headers['uuid'] === '2c56d4c7-5c46-4191-bd65-5dd820b41c30' && req.headers['rfid-tag'] != null) {
