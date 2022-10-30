@@ -44,6 +44,7 @@ const PORT = config.port;
 
 app.listen(config.port, () => {
 	console.log(`Server has been started at port ${PORT}.`.green);
+	console.log(`Docker containers are accessible via ${config.access_port}.`.blue);
 	console.log('==> '.yellow + 'Connecting to database...');
 
 	db_connect();
