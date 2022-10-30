@@ -18,7 +18,7 @@ $ cd tag-along-server
 $ cp .env.sample .env   # change it as you see fit
 $ docker-compose up --build
 ```
-Make sure it builds correctly then exit `ctrl + c`
+Make sure it builds correctly then exit `ctrl + c` <br>
 Now run
 ```
 $ docker-compose up -d
