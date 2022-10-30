@@ -6,7 +6,7 @@
 
 + Make sure you have docker, docker-compose and git installed.
 ```
-# Fedora and REHL based distros
+# Fedora and RHEL based distros
 $ sudo dnf install docker docker-compose git
 # Arch
 $ sudo pacman -S docker docker-compose git
