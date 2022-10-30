@@ -4,7 +4,7 @@
   "description": "rfid with database",
   "main": "src/app.js",
   "scripts": {
-    "start": "node index",
+    "start": "node src/app",
     "dev": "nodemon index"
   },
   "author": "Me Mario",

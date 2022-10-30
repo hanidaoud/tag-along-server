@@ -42,18 +42,25 @@ app.use('/log', require("./routes/post"));
 
 const PORT = config.port; 
 
-app.listen(config.port, () => {
-	console.log(`Server has been started at port ${PORT}.`.green);
-	console.log('==> '.yellow + 'Connecting to database...');
+function db_connect() {
 
 	const conn = mariadb.createConnection(config.db);
 
 	conn.connect(err => {
 		if(err) {
 			console.log(err.message.red);
+
 			console.log('==> Connection failed!'.red);
+			setTimeout(db_connect, 3000)
 		} else {
 			console.log('==> '.green + 'Connection succeeded!');
 		}
 	});
+}
+
+app.listen(config.port, () => {
+	console.log(`Server has been started at port ${PORT}.`.green);
+	console.log('==> '.yellow + 'Connecting to database...');
+
+	db_connect();
 });
