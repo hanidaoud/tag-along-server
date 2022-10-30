@@ -1,4 +1,5 @@
-const mariadb     = require('mysql');
+const colors = require('colors');
+const mariadb = require('mysql');
 const config = require('../config');
 
 function db_connect() {
