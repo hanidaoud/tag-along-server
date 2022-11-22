@@ -9,7 +9,7 @@
 # Fedora and RHEL based distros
 $ sudo dnf install docker docker-compose git
 # Arch
-$ sudo pacman -S docker docker-compose git
+$ sudo pacman -S docker docker-compose git --needed
 ```
 + Install tag-along-server. (docker-compose may require sudo privileges)
 ```
